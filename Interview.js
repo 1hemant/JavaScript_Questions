@@ -60,8 +60,8 @@ runPromises()
 ///////////////////////////////////////////////////////////////////////
 (() => {
     console.log(1 + +"2");
-    console.log(1 + "2");
-    console.log(1 + -"2");
+    console.log(1 + "2"); // type cohersion
+    console.log(1 + -"2"); //Any symbole except plus does type cohersion in JS
 })();
 ///////////////////////////////////////////////////////////////////
 (() => {
@@ -72,7 +72,7 @@ runPromises()
     }
     getName();    
 })();
-
+// Reference error. cos varibale should be hoisted in the given function and should give undefined error but since it is let hence it is not hoisted and gives refernce error.
 ///////////////////////////////////////////////////////////////////
 (() => {
     let arr = [1,"",null,10,true,false];
@@ -88,11 +88,12 @@ let dog={emoji:'🐶'}
 let cat ={emoji:'🐈'}
 
 animals[dog]={...dog, name:"Mara"}
-console.log(animals)
+
+
 animals[cat]={...cat, name:"Sally"}
 console.log(animals);
-// when we use one object as key for other object then then object converts in to a string
-
+// when we use one object as key for other object then then object converts in to a string as mentioned below
+//[object Object] {"emoji": "🐈","name": "Sally"}
 //Options
 // A: {emoji: "🐶", name:"Mara"}
 // B: {emoji: "🐈", name:"Sally"}   //Corrent one
@@ -102,7 +103,7 @@ console.log(animals);
 ///////////////////////////////////////////////////////////////////
 (() => {
     const fruits=['🍌','🍊','🍅'];
-    fruits.slice(0,1);
+    fruits.slice(0,1);  //dosent affect original array but creates a new array
     fruits.splice(0,1)
     fruits.unshift('🍇')
 
@@ -128,20 +129,35 @@ console.log(animals);
   })();
 ///////////////////////////////////////////////////////////////////
 (() => {
-    
+    function sayHi(){
+        return (()=>0)();
+    }
+    console.log(typeof sayHi());
+})();
+// returns number because sayhi returns EFFIE and this EFFIE return 0 its typeof is zero
+///////////////////////////////////////////////////////////////////
+(() => {
+    let a =[1,2,3,4];
+    for (let i=0;i<a.length;i++){
+        if (a[i]===2) break;
+        console.log(a[i])
+    }
 })();
 ///////////////////////////////////////////////////////////////////
 (() => {
-    
+    let a=[1,2,3,4];
+    a[a.length-1]++;
+    console.log(a);
 })();
+// Answer: [1,2,3,5]
 ///////////////////////////////////////////////////////////////////
 (() => {
-    
+    let a =[1,2,3,4,5,6,7,8]
+    let b= Array.filter(element=>{
+        return element%2===0
+    })
 })();
-///////////////////////////////////////////////////////////////////
-(() => {
-    
-})();
+// Answer: [2,4,6,8]
 ///////////////////////////////////////////////////////////////////
 (() => {
     
