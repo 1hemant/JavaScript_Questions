@@ -1,4 +1,17 @@
-{
+///////////////////////////////
+(function () {
+    // …
+  })();
+  
+  (() => {
+    // …
+  })();
+  
+  (async () => {
+    // …
+  })();
+////////////////////////////////  
+(() =>{
 const promise1 = Promise.resolve('First');
 const promise2 = Promise.resolve('Second');
 const promise3 = Promise.resolve('Third');
@@ -13,22 +26,25 @@ const runPromises=async () =>{
 runPromises()
 .then(res=>console.log(res)
  .catch(err=>console.error(err)  ))
-}
+ 
+    
+  })();
  ////////////////////////////////////
- {
- let res=arr.pop();
+ (() => {
+    let res=arr.pop();
  console.log(arr);
  console.log(res);
- }
- ///////////////////////////////////let arr=[1,2,3,4];
- {
- let arr=[1,2,3,4];
+  })();
+
+ ///////////////////////////////////
+ (() => {
+    let arr=[1,2,3,4];
  const res =arr.push(5);
  console.log(arr);
  console.log(res);
-}
+  })();
 ///////////////////////////
-{
+(() => {
     var x= 10;
     function one(){
         console.log(x);
@@ -39,44 +55,52 @@ runPromises()
         var x=20;    
     }
     one();
-}
+})();
+
 ///////////////////////////////////////////////////////////////////////
-{
+(() => {
     console.log(1 + +"2");
     console.log(1 + "2");
     console.log(1 + -"2");
-    
-}
+})();
 ///////////////////////////////////////////////////////////////////
-let name="Raamu";
-function getName(){
-    console.log(name);
-    let name='Salma';
-}
-getName();
+(() => {
+    let name="Raamu";
+    function getName(){
+        console.log(name);
+        let name='Salma';
+    }
+    getName();    
+})();
+
 ///////////////////////////////////////////////////////////////////
-let arr = [1,"",null,10,true,false];
-let result=arr.filter(Boolean);   
+(() => {
+    let arr = [1,"",null,10,true,false];
+let result=arr.filter(Boolean);   // it will filter all truthy values
 console.log(result);
  //Expected output: [1, 10, true]
+})();
+
 ///////////////////////////////////////////////////////////////////
-const animals={};
+(() => {
+    const animals={};
 let dog={emoji:'🐶'}
 let cat ={emoji:'🐈'}
 
 animals[dog]={...dog, name:"Mara"}
+console.log(animals)
 animals[cat]={...cat, name:"Sally"}
 console.log(animals);
+// when we use one object as key for other object then then object converts in to a string
 
 //Options
 // A: {emoji: "🐶", name:"Mara"}
 // B: {emoji: "🐈", name:"Sally"}   //Corrent one
 // undefined
 // Refrence Error
-
-
+})();
 ///////////////////////////////////////////////////////////////////
-{
+(() => {
     const fruits=['🍌','🍊','🍅'];
     fruits.slice(0,1);
     fruits.splice(0,1)
@@ -87,12 +111,43 @@ console.log(animals);
     // B: ['🍊','🍅']
     // C: ['🍇','🍊','🍅']   //Correct answer
     // D: ['🍇','🍌','🍊','🍅']
-}
+})();
+
 ///////////////////////////////////////////////////////////////////
+(() => {
+    let randomvalue = {name: "Lydia"}
+    randomvalue=23
+
+    //false === 'string' ; typeof proide result in string here it will provide srting "number"
+
+    if(!typeof randomvalue==="string"){
+        console.log("Not a string");
+    }else {
+        console.log("Is a string"); // Answer
+    }
+  })();
 ///////////////////////////////////////////////////////////////////
+(() => {
+    
+})();
 ///////////////////////////////////////////////////////////////////
+(() => {
+    
+})();
 ///////////////////////////////////////////////////////////////////
+(() => {
+    
+})();
 ///////////////////////////////////////////////////////////////////
+(() => {
+    
+})();
 ///////////////////////////////////////////////////////////////////
+(() => {
+    
+})();
 ///////////////////////////////////////////////////////////////////
+(() => {
+    
+})();
 ///////////////////////////////////////////////////////////////////
